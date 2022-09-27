@@ -1,2 +1,16 @@
-package com.genshintutor.demo.controllers;public class TestController {
+package com.genshintutor.demo.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class TestController {
+
+    @GetMapping("/test")
+    public String test(Model model) {
+        model.addAttribute("title", "Тест на персонажа");
+        return "test";
+    }
+
 }
