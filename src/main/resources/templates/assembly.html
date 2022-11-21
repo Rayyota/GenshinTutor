@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <title>Сборки на персонажей</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        .entry-title {
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            color: #6c757d;
+        }
+
+        a {
+            text-decoration: none;
+            color: #6c757d;
+            font-family: Arial, sans-serif;
+        }
+
+        .alert-info {
+            background-color: white;
+            border-color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header th:insert = "blocks/header"></header>
+
+<div class="container mt-5">
+    <h1>Сборки на персонажей</h1>
+
+    <div class="alert alert-info mt-1">
+        <article class="post-1">
+            <div class="page-title-area">
+                <a href="/hutao" class="featured-img"><img width="200" height="200" src="https://i.yapx.ru/UgIjU.png" class="attachment-full size-full wp-post-image" alt="Ху Тао иконка" srcset="https://i.yapx.ru/UgIjU.png 200w, https://i.yapx.ru/UgIjU.png 150w" sizes="(max-width: 200px) 100vw, 200px"></a>
+                <h2 class="entry-title"><a href="/hutao" rel="bookmark">Ху Тао</a></h2>
+            </div>
+
+            <div class="entry-content">
+                <p>Основная информация
+                    <a class="moretag" href="/assembly/1">Подробнее…</a>
+                </p>
+            </div><!-- entry-content -->
+        </article><!-- post -->
+    </div>
+
+    <div class="alert alert-info mt-1">
+        <article class="post-2">
+            <div class="page-title-area">
+                <a href="/yelan" class="featured-img"><img width="315" height="207.33" src="https://i.yapx.ru/UgIoD.png" class="attachment-full size-full wp-post-image" alt="Е Лань иконка" srcset="https://i.yapx.ru/UgIoD.png 200w, https://i.yapx.ru/UgIoD.png 150w" sizes="(max-width: 200px) 100vw, 200px"></a>
+                <h2 class="entry-title"><a href="/yelan" rel="bookmark">Е Лань</a></h2>
+            </div>
+
+            <div class="entry-content">
+                <p>Основная информация
+                    <a class="moretag" href="/assembly/2">Подробнее…</a>
+                </p>
+            </div><!-- entry-content -->
+        </article><!-- post -->
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="container">
+  <p class="float-end"><a href="#">Back to top</a></p>
+  <p>© 2022 GenshinTutor · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+</footer>
+</body>
+</html>

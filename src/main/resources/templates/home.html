@@ -82,7 +82,7 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="bd-placeholder-img" src="https://i.ibb.co/tpCskmh/genshinimpact2.png" alt="Genshin Impact" width="100%" height="100%" aria-hidden="true">
+                <img class="bd-placeholder-img" src="https://i.yapx.ru/UD5GI.png" alt="Genshin Impact" width="100%" height="100%" aria-hidden="true">
                 <div class="container">
                     <div class="carousel-caption text-start">
                         <h1>Добро пожаловать!</h1>
@@ -92,7 +92,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="bd-placeholder-img" src="https://i.ibb.co/GCbsRd2/imgonline-com-ua-Resize-RW4fdf-FCN4p-G7jtk.jpg" alt="Genshin Impact" width="100%" height="100%" aria-hidden="true">
+                <img class="bd-placeholder-img" src="https://i.yapx.ru/UD5Go.jpg" alt="Genshin Impact" width="100%" height="100%" aria-hidden="true">
                 <div class="container">
                     <div class="carousel-caption">
                         <h1>Header.</h1>
@@ -102,7 +102,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="bd-placeholder-img" src="https://i.ibb.co/6B2HWG6/imgonline-com-ua-Resize-I6-MBBHKxh3-Pl-KN.jpg" alt="Genshin Impact" width="100%" height="100%" aria-hidden="true">
+                <img class="bd-placeholder-img" src="https://i.yapx.ru/UD5G6.jpg" alt="Genshin Impact" width="100%" height="100%" aria-hidden="true">
                 <div class="container">
                     <div class="carousel-caption text-end">
                         <h1>Header.</h1>
@@ -122,7 +122,8 @@
         </button>
     </div>
 
-    <div class="arrow"> <!-- Как отсоединить часть со стрелкой? -->
+    <div class="arrow">
+
         <div class="block1"></div>
         <div class="block2"></div>
     </div>
@@ -136,19 +137,19 @@
         <!-- Three columns of text below the carousel -->
         <div class="row">
             <div class="col-lg-4">
-                <img src="https://i.ibb.co/41CVrQf/imgonline-com-ua-Resize-68f-Ipfl-VQPasu.png" alt="" width="140" height="140" class="round">
+                <img src="https://i.yapx.ru/UD5HD.png" alt="" width="140" height="140" class="round">
                 <h2 class="fw-normal">Тест на персонажа</h2>
                 <p>Пройди тест и узнай, какой персонаж тебе подходит больше всего.</p>
                 <p><a class="btn btn-secondary" href="#">Пройти тест »</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
-                <img src="https://i.ibb.co/qBMdgCG/imgonline-com-ua-Resize-6v2xw-O07i0b-Neb.jpg" alt="" width="140" height="140" class="round">
+                <img src="https://i.yapx.ru/UD5HN.jpg" alt="" width="140" height="140" class="round">
                 <h2 class="fw-normal">Сборки на персонажей</h2>
                 <p>Различные сборки и гайды на персонажей.</p>
                 <p><a class="btn btn-secondary" href="#">Перейти »</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
-                <img src="https://i.ibb.co/5KHgpkr/imgonline-com-ua-Resize-2-FO52fpl-Lto29oao.jpg" alt="" width="140" height="140" class="round">
+                <img src="https://i.yapx.ru/UD5HY.jpg" alt="" width="140" height="140" class="round">
 
                 <h2 class="fw-normal">Подсчёт максимального урона персонажа</h2>
                 <p>Узнай, какой максимальный урон может нанести твой персонаж.</p>
@@ -162,9 +163,9 @@
         <hr class="featurette-divider">
 
         <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading fw-normal lh-1">Heading.<span class="text-muted">Text.</span></h2>
-                <p class="lead">Text.</p>
+            <div th:each="el : ${posts}" class="col-md-7">
+                <h2 th:text="${el.title}" class="featurette-heading fw-normal lh-1"/>
+                <p th:text="${el.full_text}" class="lead"/>
             </div>
             <div class="col-md-5">
                 <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
