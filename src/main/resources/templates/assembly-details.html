@@ -5,12 +5,6 @@
     <title>Сборки на персонажей</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <style>
-        .entry-title {
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            color: #6c757d;
-        }
-
         a {
             text-decoration: none;
             color: #6c757d;
@@ -30,24 +24,8 @@
 <div class="container mt-5">
     <h1>Сборки на персонажей</h1>
 
-    <div th:each="el : ${characters}" class="alert alert-info mt-2">
-        <h3 th:text="${el.name}"/>
-        <a th:href="${el.id}" class="btn btn-warning">Подробнее…</a>
-    </div>
-
-    <div class="alert alert-info mt-1">
-        <article class="post-2">
-            <div class="page-title-area">
-                <a href="/yelan" class="featured-img"><img width="315" height="207.33" src="https://i.yapx.ru/UgIoD.png" class="attachment-full size-full wp-post-image" alt="Е Лань иконка" srcset="https://i.yapx.ru/UgIoD.png 200w, https://i.yapx.ru/UgIoD.png 150w" sizes="(max-width: 200px) 100vw, 200px"></a>
-                <h2 class="entry-title"><a href="/yelan" rel="bookmark">Е Лань</a></h2>
-            </div>
-
-            <div class="entry-content">
-                <p>Основная информация
-                    <a class="moretag" href="/yelan">Подробнее…</a>
-                </p>
-            </div><!-- entry-content -->
-        </article><!-- post -->
+    <div class="alert alert-info mt-2">
+        <h3 th:text="${character.getName()}"/>
     </div>
 
 </div>

@@ -44,10 +44,13 @@ public class CharacterController {
 
     @GetMapping("/assembly/{id}")
     public String assemblyDetails(@PathVariable(value = "id") long id, Model model) {
+        System.out.println(id);
         Optional<Character> character = characterRepository.findById(id);
-        ArrayList<Character> res = new ArrayList<>();
-        character.ifPresent(res::add);
-        model.addAttribute("character", character);
+        System.out.println(character.get().getName());
+//        ArrayList<Character> res = new ArrayList<>();
+//        character.ifPresent(res::add);
+//        System.out.println(res.get(0).getName());
+        model.addAttribute("character", character.get());
         return "assembly-details";
     }
 }

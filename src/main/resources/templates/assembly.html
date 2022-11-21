@@ -37,14 +37,9 @@
                 <h2 class="entry-title"><a href="/hutao" rel="bookmark">Ху Тао</a></h2>
             </div>
 
-            <div th:each="el : ${characters}" class="alert alert-info mt-2">
-                <h3 th:text="${el.name}"/>
-                <a th:href="${el.id}" class="btn btn-warning">Подробнее…</a>
-            </div>
-
             <div class="entry-content">
                 <p>Основная информация
-                    <a class="moretag" href="/assembly/${el.id}">Подробнее…</a>
+                    <a class="moretag" href="/assembly/1">Подробнее…</a>
                 </p>
             </div><!-- entry-content -->
         </article><!-- post -->
@@ -59,7 +54,7 @@
 
             <div class="entry-content">
                 <p>Основная информация
-                    <a class="moretag" href="/yelan">Подробнее…</a>
+                    <a class="moretag" href="/assembly/2">Подробнее…</a>
                 </p>
             </div><!-- entry-content -->
         </article><!-- post -->
