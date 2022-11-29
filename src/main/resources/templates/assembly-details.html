@@ -32,6 +32,10 @@
         <img th:src="@{${'http://localhost/images/' + character.getId() + '.png'}}" width="300">
     </div>
 
+    <div class="basic_info_character">
+        <p th:text="${character.getBasic_information()}"/>
+    </div>
+
     <table class="has-fixed-layout">
         <tbody>
         <tr>
@@ -133,9 +137,9 @@
         </tbody>
     </table>
 
-    <h3 th:text="Характеристики">
-        <p th:text="${character.getCharacteristic()}"/>
-    </h3>
+    <h3 th:text="Характеристики"></h3>
+    <p th:text="${character.getCharacteristic()}"/>
+
 
 </div>
 
