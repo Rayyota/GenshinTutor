@@ -1,56 +1,40 @@
 package com.genshintutor.demo.controllers;
 
 import com.genshintutor.demo.models.Character;
-import com.genshintutor.demo.repo.CharacterRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.genshintutor.demo.models.CharacterPage;
+import com.genshintutor.demo.services.CharacterService;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import java.util.ArrayList;
-import java.util.Optional;
-
 @Controller
 public class CharacterController {
 
-    @Autowired
-    private CharacterRepository characterRepository;
+    private final CharacterService characterService;
+
+    public CharacterController(CharacterService characterService) {
+        this.characterService = characterService;
+    }
 
     @GetMapping("/hutao")
     public String hutao(Model model) {
-        Iterable<Character> characters = characterRepository.findAll();
-        model.addAttribute("characters", characters);
-        model.addAttribute("title", "Ху Тао");
-        return "hutao";
+        return characterService.hutao(model);
     }
 
     @GetMapping("/yelan")
     public String yelan(Model model) {
-        Iterable<Character> characters = characterRepository.findAll();
-        model.addAttribute("characters", characters);
-        model.addAttribute("title", "Е Лань");
-        return "yelan";
+        return characterService.yelan(model);
     }
-
-//    @GetMapping("/assembly/${charID}")
-//    public String getCharacters(Long charID) {
-//        Iterable<Character> characters = characterRepository.findAll();
-//        Character character = this.characterRepository.findById.(charID);
-//        model.addAttribute("character", character);
-//        model.addAttribute("title", "Е Лань");
-//        return "character";
-//    }
 
     @GetMapping("/assembly/{id}")
     public String assemblyDetails(@PathVariable(value = "id") long id, Model model) {
-        System.out.println(id);
-        Optional<Character> character = characterRepository.findById(id);
-        System.out.println(character.get().getName());
-//        ArrayList<Character> res = new ArrayList<>();
-//        character.ifPresent(res::add);
-//        System.out.println(res.get(0).getName());
-        model.addAttribute("character", character.get());
-        return "assembly-details";
+        return characterService.assemblyDetails(id, model);
     }
+
+//    @GetMapping("/assembly/{id}")
+//    public Page<Character> getCharacter(@PathVariable(value = "id") CharacterPage characterPage) {
+//        return characterService.getCharacter(characterPage);
+//    }
 }

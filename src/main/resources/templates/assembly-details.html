@@ -28,6 +28,119 @@
         <h3 th:text="${character.getName()}"/>
     </div>
 
+    <div class="images_character">
+        <img th:src="@{${'http://localhost/images/' + character.getId() + '.png'}}" width="300">
+    </div>
+
+    <div class="basic_info_character">
+        <p th:text="${character.getBasic_information()}"/>
+    </div>
+
+    <table class="has-fixed-layout">
+        <tbody>
+        <tr>
+            <td>
+                <strong>Стихия:</strong>
+            </td>
+            <td>
+            <td th:text="${character.getElement()}"></td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Оружие:</strong>
+            </td>
+            <td>
+            <td th:text="${character.getWeapon()}"></td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Редкость:</strong>
+            </td>
+            <td>
+            <td th:text="${character.getRarity()}"></td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Пол:</strong>
+            </td>
+            <td>
+            <td th:text="${character.getSex()}"></td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>День Рождения:</strong>
+            </td>
+            <td>
+            <td th:text="${character.getBirthday()}"></td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Созвездие:</strong>
+            </td>
+            <td>
+            <td th:text="${character.getConstellation()}"></td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Регион:</strong>
+            </td>
+            <td>
+            <td th:text="${character.getRegion()}"></td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Принадлежность:</strong>
+            </td>
+            <td>
+            <td th:text="${character.getUtensils()}"></td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Особое блюдо:</strong>
+            </td>
+            <td>
+            <td th:text="${character.getSpecial_dish()}"></td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Связь:</strong>
+            </td>
+            <td>
+            <td th:text="${character.getConnection()}"></td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Как получить:</strong>
+            </td>
+            <td>
+            <td th:text="${character.getHow_get()}"></td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Дата релиза:</strong>
+            </td>
+            <td>
+            <td th:text="${character.getDate_release()}"></td>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 th:text="Характеристики"></h3>
+    <p th:text="${character.getCharacteristic()}"/>
+
+
 </div>
 
 <!-- FOOTER -->

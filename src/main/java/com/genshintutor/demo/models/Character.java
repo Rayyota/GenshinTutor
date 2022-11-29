@@ -1,9 +1,7 @@
 package com.genshintutor.demo.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Character {
@@ -14,7 +12,10 @@ public class Character {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String name, element, weapon, rarity, sex, birthday, constellation, region, utensils, special_dish, connection, how_get, date_release, characteristic;
+    private String name, element, weapon, rarity, sex, birthday, constellation, region, utensils, special_dish, connection, how_get, date_release, characteristic, basic_information;
+
+    @ManyToMany(mappedBy = "characters",fetch = FetchType.EAGER)
+    private List<Weapon> weapons;
 
     public Long getId() {
         return id;
@@ -26,6 +27,22 @@ public class Character {
 
     public String getName() {
         return name;
+    }
+
+    public List<Weapon> getWeapons() {
+        return weapons;
+    }
+
+    public void setWeapons(List<Weapon> weapons) {
+        this.weapons = weapons;
+    }
+
+    public String getBasic_information() {
+        return basic_information;
+    }
+
+    public void setBasic_information(String basic_information) {
+        this.basic_information = basic_information;
     }
 
     public void setName(String name) {
