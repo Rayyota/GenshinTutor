@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <title>Сборки на персонажей</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        a {
+            text-decoration: none;
+            color: #6c757d;
+            font-family: Arial, sans-serif;
+        }
+
+        .alert-info {
+            background-color: white;
+            border-color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header th:insert="blocks/header"></header>
+
+<div class="container mt-5">
+    <h1>Добавление персонажа</h1>
+    <form action="/character/add" method="post">
+        <input type="text" name="name" placeholder="Введите имя персонажа">
+        <textarea name="basic_information" placeholder="Введите описание персонажа"></textarea>
+        <textarea name="weapon" placeholder="Введите тип оружия"></textarea>
+        <textarea name="utensils" placeholder="Введите кому/чему принадлежит персонаж"></textarea>
+        <textarea name="special_dish" placeholder="Введите специальное блюдо персонажа"></textarea>
+        <textarea name="sex" placeholder="Введите пол персонажа"></textarea>
+        <textarea name="region" placeholder="Введите регион персонажа"></textarea>
+        <textarea name="rarity" placeholder="Введите редкость персонажа"></textarea>
+        <textarea name="how_get" placeholder="Введите как получить персонажа"></textarea>
+        <textarea name="element" placeholder="Введите стихию персонажа"></textarea>
+        <textarea name="date_release" placeholder="Введите дату выхода персонажа"></textarea>
+        <textarea name="constellation" placeholder="Введите название созвездия персонажа"></textarea>
+        <textarea name="connection" placeholder="Введите связи персонажа"></textarea>
+        <textarea name="characteristic" placeholder="Введите характеристики персонажа"></textarea>
+        <textarea name="birthday" placeholder="Введите дату рождения персонажа"></textarea>
+        <button type="submit" class="add-button">Добавить персонажа</button>
+    </form>
+
+</div>
+
+<footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>© 2022 GenshinTutor · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+</footer>
+</body>
+</html>

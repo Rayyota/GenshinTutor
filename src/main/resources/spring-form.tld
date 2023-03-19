@@ -1,0 +1,48 @@
+<xs:schema xmlns="http://www.springframework.org/schema/form"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.springframework.org/schema/form"
+           elementFormDefault="qualified">
+
+    <xs:import namespace="http://www.springframework.org/schema/util"
+               schemaLocation="http://www.springframework.org/schema/util/spring-util.xsd"/>
+
+    <xs:element name="form">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##other"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:string"/>
+            <xs:attribute name="modelAttribute" type="xs:string"/>
+            <xs:attribute name="method" default="post">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="get"/>
+                        <xs:enumeration value="post"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="action" type="xs:string"/>
+            <xs:attribute name="enctype" default="application/x-www-form-urlencoded">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="application/x-www-form-urlencoded"/>
+                        <xs:enumeration value="multipart/form-data"/>
+                        <xs:enumeration value="text/plain"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="onsubmit" type="xs:string"/>
+            <xs:attribute name="autocomplete">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="on"/>
+                        <xs:enumeration value="off"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="cssClass" type="xs:string"/>
+            <xs:attribute name="cssErrorClass" type="xs:string"/>
+            <xs:attribute name="cssOnSubmitClass" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -15,6 +15,21 @@
             background-color: white;
             border-color: white;
         }
+
+        .is-layout-flex {
+            display: flex;
+            flex-wrap: nowrap;
+            grid-gap: 40px;
+        }
+
+        .name-element {
+            color: #4452A6;
+            font-weight: 700;
+        }
+
+        .characteristic {
+            width: 500px;
+        }
     </style>
 </head>
 <body>
@@ -28,8 +43,12 @@
         <h3 th:text="${character.getName()}"/>
     </div>
 
-    <div class="images_character">
+    <div class="character-image">
         <img th:src="@{${'http://localhost/images/' + character.getId() + '.png'}}" width="300">
+    </div>
+
+    <div class="basic_info_character">
+        <p th:text="${character.getBasic_information()}"/>
     </div>
 
     <table class="has-fixed-layout">
@@ -133,9 +152,35 @@
         </tbody>
     </table>
 
-    <h3 th:text="Характеристики">
-        <p th:text="${character.getCharacteristic()}"/>
-    </h3>
+    <h3 th:text="Характеристики"></h3>
+    <p th:text="${character.getCharacteristic()}"/>
+
+    <div th:each="build : ${character.getBuilds}">
+        <h3 th:text="${build.getType()}"></h3>
+        <div class="is-layout-flex wp-container-6 wp-block-columns">
+            <div class="is-layout-flow wp-block-column">
+                <h4>Оружие</h4>
+                <div th:each="weapon : ${build.getWeapons()}">
+                    <div>
+                        <a th:href="@{${'/weapon/' + weapon.getId()}}" th:text="${weapon.getName()}" class="name-element"/>
+                    </div>
+                    <img th:src="@{${'http://localhost/images/weapons/' + weapon.getId() + '.png'}}" width="97">
+                    <p th:text="${weapon.getRarity()}"/>
+                    <p th:text="${weapon.getCharacteristic()}" class="characteristic"/>
+                </div>
+            </div>
+            <div class="is-layout-flow wp-block-column">
+                <h4>Артефакт</h4>
+                <div th:each="artifact : ${build.getArtifacts()}">
+                    <div>
+                        <a th:href="@{${'/artifact/' + artifact.getId()}}" th:text="${artifact.getName()}" class="name-element"/>
+                    </div>
+                    <img th:src="@{${'http://localhost/images/artifacts/' + artifact.getId() + '.png'}}" width="128">
+                    <p th:text="${artifact.getCharacteristic()}" class="characteristic"/>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 
