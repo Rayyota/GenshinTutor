@@ -22,13 +22,17 @@
                 </form>
 
                 <div class="text-end">
-                    <a href="/login">
+                    <a th:if="${#httpServletRequest.getRemoteUser() == null}" href="/login">
                         <button type="button" class="btn btn-outline-light me-2">Login</button>
                     </a>
-                    <a href="/registration">
+
+                    <a th:if="${#httpServletRequest.getRemoteUser() == null}" href="/registration">
                         <button type="button" class="btn btn-warning">Sign-up</button>
                     </a>
-                    <a href="/logout">Logout</a>
+
+                    <div th:if="${#httpServletRequest.getRemoteUser() != null}">
+                        <a href="/logout">Logout</a>
+                    </div>
                 </div>
             </div>
         </div>
