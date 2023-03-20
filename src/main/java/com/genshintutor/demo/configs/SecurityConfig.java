@@ -9,12 +9,8 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
-
-import java.util.Collection;
 
 @Configuration
 @EnableWebSecurity
@@ -37,20 +33,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf()
                 .disable()
                 .authorizeRequests()
-                //Доступ только для не зарегистрированных пользователей
                 .antMatchers("/registration").not().fullyAuthenticated()
-                //Доступ только для пользователей с ролью Администратор
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers("/characters").hasRole("USER")
-                //Доступ разрешен всем пользователей
                 .antMatchers("/", "/resources/**").permitAll()
-                //Все остальные страницы требуют аутентификации
                 .anyRequest().authenticated()
                 .and()
-                //Настройка для входа в систему
                 .formLogin()
                 .loginPage("/login")
-                //Перенарпавление на главную страницу после успешного входа
                 .defaultSuccessUrl("/")
                 .permitAll()
                 .and()
